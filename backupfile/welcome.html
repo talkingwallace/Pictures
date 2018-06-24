@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>大数据可视化仪表盘</title>
+</head>
+<body>
+    <h1>你好，欢迎使用这个仪表盘工具</h1>
+    <h3>请输入您的用户名与密码</h3>
+    {% if error is not None %}
+        <h2>错误:</h2>
+        {% for key,value in error.items %}
+            <p>{{ key }} : {{ value }}</p>
+        {% endfor %}
+    {% endif %}
+    <form action="/login" method="post">
+        {{ loginForm.as_p }}
+        <input type="submit">
+    </form>
+</body>
+</html>
